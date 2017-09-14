@@ -6,7 +6,7 @@ import Translate from 'react-translate-component'
 
 import {en, de} from './Translations/header.translation'
 
-import {LanguageSwitcher} from './language-switcher.widget'
+import {LanguageSwitcher} from './language-switcher.component'
 
 counterpart.registerTranslations('en', en);
 counterpart.registerTranslations('de', de);
@@ -23,6 +23,6 @@ export const Header = (props) => (
                 </li>
             ))}
         </ul>
-        <LanguageSwitcher languages={['en', 'de']} />
+        <LanguageSwitcher />
     </div>
 );

@@ -5,6 +5,7 @@ import {
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import promiseMiddleware from 'redux-promise'
 
 import {registrator} from './Reducers/registrator.reducer'
 
@@ -16,7 +17,8 @@ import { Spinner } from './Components/Spinner/spinner.component'
 
 let store = createStore(
   registrator,
-  applyMiddleware(thunkMiddleware)
+  applyMiddleware(thunkMiddleware, 
+    promiseMiddleware)
 );
 
 const Root = () => (

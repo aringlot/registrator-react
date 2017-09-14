@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {Form, Text} from 'react-form'
 
-export const loginWidget = ({isAuthenticated, onSubmit}) => (
+const loginWidget = ({isAuthenticated, onSubmit}) => (
     <Form onSubmit={values => onSubmit(values)}
           validate={
               ({login, password}) => {
@@ -27,3 +28,10 @@ export const loginWidget = ({isAuthenticated, onSubmit}) => (
       }
     </Form>
 );
+
+loginWidget.propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+    onSubmit: PropTypes.func.isRequired
+};
+
+export {loginWidget}

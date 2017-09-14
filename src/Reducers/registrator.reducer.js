@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 
-import {authenticate} from './login.reducer'
-import {spinner} from './spinner.reducer'
+import {authenticate} from './Partials/login.reducer'
+import {spinner} from './Partials/spinner.reducer'
+import {locale} from './Partials/locale.reducer'
 
 export const registrator = combineReducers({
         authenticate, 
-        spinner
+        spinner, 
+        locale
     });

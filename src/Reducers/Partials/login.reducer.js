@@ -1,4 +1,4 @@
-import {USER_LOGOUT, USER_LOGIN_SUCCESS, USER_LOGIN_INPROGRESS} from '../Actions/action.type'
+import {USER_LOGOUT, USER_LOGIN_SUCCESS, USER_LOGIN_INPROGRESS} from '../../Actions/action.type'
 
 const authentication = { 
     isAuthenticated : false, 
