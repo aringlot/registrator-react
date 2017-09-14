@@ -9,20 +9,28 @@ const authentication = {
 export const authenticate = (state = authentication, action) => {
     switch(action.type){
         case USER_LOGIN_INPROGRESS:
-            return Object.assign({}, state, {
-                    isBeingAuthenticated: true, 
-                    user: action.user
-                });
+            return { ...state,
+                isAuthenticated: false,
+                isBeingAuthenticated: true, 
+                user: action.user
+            };
         
         case USER_LOGIN_SUCCESS:{
-            return {...state, isBeingAuthenticated: false, isAuthenticated: true }
+
+            if(!state.isBeingAuthenticated) throw {action, state, message: 'inappropriate state'};
+
+            return {...state, 
+                isBeingAuthenticated: false, 
+                isAuthenticated: true 
+            }
         }
 
         case USER_LOGOUT:
-            return Object.assign({}, state, {
-                    isAuthenticated: false,
-                    user: {}
-                });
+            return { ...state,
+                isAuthenticated: false,
+                isBeingAuthenticated: false,
+                user: {}
+            };
 
         default: return state;
     }
