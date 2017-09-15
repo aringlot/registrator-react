@@ -25,11 +25,11 @@ const Root = () => (
   <Provider store={store}>
     <Router>
         <div>
-        <Header routes={routes} />
-        {routes.map((route, i) => (
-            <RoutedView key={i} {...route}/>
-        ))}
-        <Spinner />
+          <Header routes={routes} />
+          {routes.map((route, i) => (
+              <RoutedView key={i} {...route}/>
+          ))}
+          <Spinner />
         </div>
     </Router>
   </Provider>
